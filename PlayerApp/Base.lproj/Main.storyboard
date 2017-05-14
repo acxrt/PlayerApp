@@ -1,20 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4S5-uH-pJg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IXJ-jP-qiW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AV Player View Controller-->
-        <scene sceneID="sqW-dK-F1N">
+        <!--View Controller-->
+        <scene sceneID="HWF-NA-R2S">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="4S5-uH-pJg" customClass="CustomPlayerViewController" customModule="PlayerApp" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6MM-Nq-g6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="IXJ-jP-qiW" customClass="ViewController" customModule="PlayerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Io-DE-hvl"/>
+                        <viewControllerLayoutGuide type="bottom" id="ceK-2v-2vf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eQG-jO-oco">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAo-1b-Cjm">
+                                <rect key="frame" x="36" y="587" width="142" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UXJ-iD-jh7"/>
+                                </constraints>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="PlayPauseButtonPressed:" destination="IXJ-jP-qiW" eventType="touchUpInside" id="iJO-OC-KEm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAN-e1-WSg">
+                                <rect key="frame" x="198" y="587" width="141" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Sr-JK-gnI"/>
+                                </constraints>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="StopButtonPressed:" destination="IXJ-jP-qiW" eventType="touchUpInside" id="RRX-xd-L2D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iAo-1b-Cjm" firstAttribute="leading" secondItem="eQG-jO-oco" secondAttribute="leadingMargin" constant="20" id="5eO-us-pzX"/>
+                            <constraint firstItem="ceK-2v-2vf" firstAttribute="top" secondItem="qAN-e1-WSg" secondAttribute="bottom" constant="30" id="nBS-5O-aDv"/>
+                            <constraint firstItem="qAN-e1-WSg" firstAttribute="leading" secondItem="iAo-1b-Cjm" secondAttribute="trailing" constant="20" id="qu2-2W-AYX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qAN-e1-WSg" secondAttribute="trailing" constant="20" id="s6A-IP-Jy0"/>
+                            <constraint firstItem="ceK-2v-2vf" firstAttribute="top" secondItem="iAo-1b-Cjm" secondAttribute="bottom" constant="30" id="wMF-XM-si3"/>
+                            <constraint firstItem="iAo-1b-Cjm" firstAttribute="width" secondItem="qAN-e1-WSg" secondAttribute="width" id="xa9-aX-oeN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playPauseButton" destination="iAo-1b-Cjm" id="JVs-uC-RYj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSb-v7-peG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="33"/>
+            <point key="canvasLocation" x="1494" y="46"/>
         </scene>
     </scenes>
 </document>

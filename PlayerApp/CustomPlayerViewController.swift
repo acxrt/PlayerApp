@@ -42,10 +42,11 @@ class CustomPlayerViewController: AVPlayerViewController, AVPlayerViewController
 
         //        http://webb1.nice264.com/npaw/hls_samples/bbb/playlist.m3u8
         if let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") {
-            player = AVPlayer.init(url: videoURL)
+            player = PlayerActions.init(url: videoURL)
             player?.play()
         }
         
+        print("STATUS: \(player?.status)")
     }
-    
+
 }
