@@ -13,6 +13,7 @@
 		8B70EA5E1EC8C9F000BEDC33 /* PlayerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B70EA5C1EC8C9F000BEDC33 /* PlayerApp.xcdatamodeld */; };
 		8B70EA601EC8C9F000BEDC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B70EA5F1EC8C9F000BEDC33 /* Assets.xcassets */; };
 		8B70EA631EC8C9F000BEDC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B70EA611EC8C9F000BEDC33 /* LaunchScreen.storyboard */; };
+		8B70EA801EC8EB9000BEDC33 /* CustomPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70EA7F1EC8EB9000BEDC33 /* CustomPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8B70EA5F1EC8C9F000BEDC33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B70EA621EC8C9F000BEDC33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B70EA641EC8C9F000BEDC33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B70EA7F1EC8EB9000BEDC33 /* CustomPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8B70EA611EC8C9F000BEDC33 /* LaunchScreen.storyboard */,
 				8B70EA641EC8C9F000BEDC33 /* Info.plist */,
 				8B70EA5C1EC8C9F000BEDC33 /* PlayerApp.xcdatamodeld */,
+				8B70EA7F1EC8EB9000BEDC33 /* CustomPlayerViewController.swift */,
 			);
 			path = PlayerApp;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B70EA801EC8EB9000BEDC33 /* CustomPlayerViewController.swift in Sources */,
 				8B70EA5E1EC8C9F000BEDC33 /* PlayerApp.xcdatamodeld in Sources */,
 				8B70EA581EC8C9F000BEDC33 /* ViewController.swift in Sources */,
 				8B70EA561EC8C9EF00BEDC33 /* AppDelegate.swift in Sources */,
@@ -301,6 +305,7 @@
 				8B70EA691EC8C9F000BEDC33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
