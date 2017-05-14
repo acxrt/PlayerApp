@@ -9,7 +9,8 @@
 import UIKit
 import AVFoundation
 import PlayerFramework
-
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
@@ -38,10 +39,21 @@ class ViewController: UIViewController {
             
             self.view.layer.addSublayer(playerLayer)
             
-            
+            // Observe if video finishes
             NotificationCenter.default.addObserver(self, selector: #selector(ViewController.playerDidFinishPlaying(note:)),
                                                    name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+            // Start video
             player.play()
+            
+            // HTTP Request
+            makeFakeHTTPRequest(success: { stringSuccess in
+                
+                print("Request Success! We get: \(stringSuccess)")
+                
+            }, failure: {error in
+                
+                print("Request error :( We get: \(error)")
+            })
         }
     }
 
@@ -53,6 +65,16 @@ class ViewController: UIViewController {
             
             playPauseButton.setTitle("Pause", for: .normal)
             player.resume()
+            
+            // HTTP Request
+            makeFakeHTTPRequest(success: { stringSuccess in
+                
+                print("Request Success! We get: \(stringSuccess)")
+                
+            }, failure: {error in
+                
+                print("Request error :( We get: \(error)")
+            })
         }
         else { // Playing
             
@@ -67,9 +89,38 @@ class ViewController: UIViewController {
     }
     
     func playerDidFinishPlaying(note: NSNotification) {
-        print("Video Finished")
         
+        // HTTP Request
+        makeFakeHTTPRequest(success: { stringSuccess in
+            
+            print("Request Success! We get: \(stringSuccess)")
+            
+        }, failure: {error in
+            
+            print("Request error :( We get: \(error)")
+        })
+
+        // Stop video
         player.stop()
+        playPauseButton.setTitle("Play", for: .normal)
+        
+    }
+    
+    
+    func makeFakeHTTPRequest(success:@escaping (String) -> Void, failure:@escaping (Error) -> Void) {
+        
+        Alamofire.request("https://www.randomRequest.com/aaafc040/download?count=10").responseJSON { response in
+            if response.result.isSuccess {
+                let resJson = JSON(response.result.value!)
+                
+                success("\(resJson)")
+            }
+            if response.result.isFailure {
+                let error : Error = response.result.error!
+                
+                failure(error)
+            }
+        }
     }
 }
 
